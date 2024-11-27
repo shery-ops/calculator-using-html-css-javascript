@@ -1,0 +1,11 @@
+.a{
+    height: 60px;
+     border-radius: 30px; 
+     width: 60px;
+}
+body{
+    background-color: rgb(85, 73, 63);
+}
+#AC{
+    background-color: rgb(192, 19, 19);
+}

@@ -1,0 +1,28 @@
+.a{
+    height: 60px;
+     border-radius: 30px; 
+     width: 60px;
+}
+.b{
+    height: 50px;
+    font-size: larger; 
+    border-radius: 20px;
+    width: 250px;
+}
+#equal{
+    background-color: rgb(119, 119, 228);
+}
+#h1{
+    color: white;
+    font-size: 50px;
+}
+body{
+    background-color: rgb(9, 9, 9);
+    padding-left: 500px;
+}
+#AC{
+    background-color: rgb(192, 19, 19);
+}
+#ans{
+    text-align: left;
+}

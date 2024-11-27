@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator_files/style.css">
+  </head>
+  <body>
+    <div id="new">
+      <fieldset style="
+        background-color: rgb(8, 8, 8);
+          padding-left: 250px;
+          margin-left: 200px;
+          margin-right: 200px;
+          margin-right: 250px;
+          padding-top: 50px;
+        ">
+        <h1 style="color: white;">Calculator</h1>
+        <br>
+        <output style="border: 2px; border-color: black" id="output"></output>
+        <button id="1" class="a" onclick="press(1)">1</button>
+        <button id="2" class="a" onclick="press(2)">2</button>
+        <button id="3" class="a" onclick="press(3)">3</button>
+        <button id="+" class="a" onclick="press('+')">+</button><br><br>
+        <button id="4" class="a" onclick="press(4)">4</button>
+        <button id="5" class="a" onclick="press(5)">5</button>
+        <button id="6" class="a" onclick="press(6)">6</button>
+        <button id="-" class="a" onclick="press('-')">-</button><br><br>
+        <button id="7" class="a" onclick="press(7)">7</button>
+        <button id="8" class="a" onclick="press(8)">8</button>
+        <button id="9" class="a" onclick="press(9)">9</button>
+        <button id="*" class="a" onclick="press('*')">x</button>
+        <br><br>
+        <button id="0" class="a" onclick="press(0)">0</button>
+        <button id="/" class="a" onclick="press('/')">/</button>
+        <button id="=" class="a" onclick="calculate()" style="background-color: rgb(119, 119, 228);">=</button>
+        <button id="AC" class="a" onclick="clearAll()">AC</button>
+
+        <h3 style="color: white;">Answer</h3>
+        <button id="ans" style="height: 50px;font-size: larger; border-radius: 20px; width: 220px;">0</button>
+      </fieldset>
+    </div>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+  <script>
+    let currentInput = ""; // Store current input string
+
+    // Output element
+    const output = document.getElementById("output");
+    var ans = document.getElementById("ans");
+    let y = 0;
+    ans.innerHTML = y;
+    let array = [];
+
+    console.log(array);
+    function press(n) {
+        currentInput += n;
+      console.log(n);
+      ans.innerHTML = currentInput;
+      array.push(n);
+    }
+
+    function calculate(){
+        console.log(currentInput)
+        let result = eval(currentInput)
+        ans.innerHTML  = result
+        console.log(result)
+    }
+    function clearAll(){
+      currentInput = "";
+      ans.innerHTML = "0";
+      array = [];
+    }
+  </script>
+
+</body></html>

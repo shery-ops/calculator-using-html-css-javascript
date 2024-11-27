@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
     <div id="new">
-        <fieldset style="padding-left: 250px;margin-left: 200px;margin-right: 200px;margin-right: 250px;padding-top: 50px;">
-    
-        <h1>Calculator</h1><br>
-        <output style="border: 2px;border-color: black;"></output>
-        <button id="1" onclick="press(1)" >1</button>
-        <button id="2" onclick="press(2)">2</button>  
-        <button id="3" onclick="press(3)">3</button>
-        <button id="+" >+</button><br><br>
-        <button id="4" onclick="press(4)">4</button>
-        <button id="5" onclick="press(5)">5</button>
-        <button id="6" onclick="press(6)">6</button>
-        <button id="-">-</button><br><br>
-        <button id="7" onclick="press(7)">7</button>
-        <button id="8" onclick="press(8)">8</button>
-        <button id="9" onclick="press(9 )">9</button>
-        <button id="x">x</button>
-        <br><br><button id="0" onclick="press(0)">0</button>
-        <button id="/">/</button>
-        <button id="=" style="background-color: rgb(126, 126, 223);">=</button>
-        <button id="AC" style="background-color: rgb(248, 109, 109);">AC</button>
-        <h3>Answer</h3>
-        <button id="ans" style="font-size: larger;"></button>
+        <h1 id="h1">Calculator</h1>
+        <br />
+        <!-- <output style="border: 2px; border-color: black" id="output"></output> -->
+        <button id="ans"  class="b" >0</button><br><br><br>
+        <button id="1" class="a" onclick="press(1)" >1</button>
+        <button id="2" class="a" onclick="press(2)" >2</button>
+        <button id="3" class="a" onclick="press(3)" >3</button>
+        <button id="+" class="a" onclick="press('+')">+</button><br/><br/>
+        <button id="4" class="a" onclick="press(4)" >4</button>
+        <button id="5" class="a" onclick="press(5)">5</button>
+        <button id="6" class="a" onclick="press(6)">6</button>
+        <button id="-" class="a" onclick="press('-')">-</button><br /><br />
+        <button id="7" class="a" onclick="press(7)">7</button>
+        <button id="8" class="a" onclick="press(8)" >8</button>
+        <button id="9" class="a" onclick="press(9)" >9</button>
+        <button id="*" class="a" onclick="press('*')">x</button>
+        <br /><br />
+        <button id="0" class="a" onclick="press(0)" >0</button>
+        <button id="/" class="a" onclick="press('/')" >/</button>
+        <button id="equal" class="a" onclick="calculate()">=</button>
+        <button id="AC" class="a" onclick="clearAll()">AC</button>
 
-      
-    </fieldset>
     </div>
-</body>
-<script>
-    let y=0;
-    var ans = document.getElementById('ans')
-    ans.innerHTML = y;
-function press(n){
-    console.log(n);
-    ans.innerHTML = n
-} 
-
-
-</script>
+  </body>
+  <script src="java.js"></script>
 </html>
